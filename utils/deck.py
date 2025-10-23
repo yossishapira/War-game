@@ -19,22 +19,23 @@ def compare_cards(p1_card:dict, p2_card:dict) -> str:
 
 def create_deck() -> list[dict]:
     deck = []
-    cards = {"rank":"","suite":"","value":""}
+    cards1 = {}
     suite = ["H","C","D","S"]
     rank = ["2","3","4","5","6","7",
      "8","9","10","J","Q","K","A"]
     
     for x in suite:
         for s,z in enumerate(rank):
-                cards["rank"] = z
-                cards["suite"] = x
-                cards["value"] = s+2
-
-                deck.append(cards)
+            cards2 = {"rank":"","suite":"","value":""}
+            cards2["rank"] = z
+            cards2["suite"] = x
+            cards2["value"] = s+2
+            cards1 = cards2
+            deck.append(cards1)
                 
                 
     return deck
-print(create_deck())
+print(len(create_deck()))
 
 
 def shuffle(deck:list[dict]) -> list[dict]:
