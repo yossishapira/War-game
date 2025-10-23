@@ -35,8 +35,22 @@ def create_deck() -> list[dict]:
                 
                 
     return deck
-print(len(create_deck()))
 
 
+import random
 def shuffle(deck:list[dict]) -> list[dict]:
-    return
+    my_deck = deck
+    count = 0
+    while count < 1000:
+       count +=1
+       random_index1 = random.randint(0,51)
+       random_index2 = random.randint(0,51)
+       if random_index1 == random_index2:
+           continue
+       else:
+           my_deck[random_index1], my_deck[random_index2] = my_deck[random_index2], my_deck[random_index1]
+    
+    return my_deck
+    
+
+
