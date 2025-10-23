@@ -1,13 +1,40 @@
 def create_card(rank:str,suite:str) -> dict:
-    return
-
+    dicti = {"rank":"" ,"suite":"" ,"value":""}
+    value_rank = {"2":2 ,"3":3 ,"4": 4,"5":5 ,"6": 6,"7":7,"8":8,
+              "9":9 ,"10":10,"J":11,"Q":12,"K":13,"A":14}
+    dicti["rank"] = rank.upper()
+    dicti["suite"] = suite.upper()
+    for i in value_rank:
+        if  i == rank.upper():
+            dicti["value"] = value_rank[i] 
+    return dicti  
 
 def compare_cards(p1_card:dict, p2_card:dict) -> str:
-    return
-
+    if p1_card["value"] > p2_card["value"]:
+        return "p1"
+    elif p2_card["value"] > p1_card["value"]:
+        return "p2"
+    else:
+        return "WAR" 
 
 def create_deck() -> list[dict]:
-    return
+    deck = []
+    cards = {"rank":"","suite":"","value":""}
+    suite = ["H","C","D","S"]
+    rank = ["2","3","4","5","6","7",
+     "8","9","10","J","Q","K","A"]
+    
+    for x in suite:
+        for s,z in enumerate(rank):
+                cards["rank"] = z
+                cards["suite"] = x
+                cards["value"] = s+2
+
+                deck.append(cards)
+                
+                
+    return deck
+print(create_deck())
 
 
 def shuffle(deck:list[dict]) -> list[dict]:
