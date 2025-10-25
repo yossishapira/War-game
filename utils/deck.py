@@ -1,3 +1,5 @@
+import random
+
 def create_card(rank:str,suite:str) -> dict:
     dicti = {"rank":"" ,"suite":"" ,"value":""}
     value_rank = {"2":2 ,"3":3 ,"4": 4,"5":5 ,"6": 6,"7":7,"8":8,
@@ -51,6 +53,6 @@ def shuffle(deck:list[dict]) -> list[dict]:
            my_deck[random_index1], my_deck[random_index2] = my_deck[random_index2], my_deck[random_index1]
     
     return my_deck
-    
+print(shuffle(create_deck()))
 
 
